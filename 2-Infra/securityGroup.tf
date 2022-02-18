@@ -5,7 +5,7 @@ data "http" "myip" {
 resource "aws_security_group" "sg_Earth" {
   name        = "sg_Earth"
   description = "Libera portas inbound 22/80"
-  vpc_id      = aws_vpc.vpc_Earth.id #teste
+  vpc_id      = aws_vpc.vpc_Earth.id
 
   ingress {
     from_port   = 22
