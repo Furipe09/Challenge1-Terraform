@@ -7,5 +7,4 @@ module "key_pair" {
 
   key_name   = "deploy-terraform"
   public_key = file("/home/furion/.ssh/id_rsa.pub")
-  #tls_private_key.this.public_key_openssh
 }
