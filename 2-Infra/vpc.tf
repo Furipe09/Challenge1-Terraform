@@ -3,7 +3,6 @@ resource "aws_vpc" "vpc_Earth" {
   tags = {
     Name     = "VPC_Earth"
     Provider = "terraform"
-    Role     = "test"
   }
 }
 
@@ -12,7 +11,6 @@ resource "aws_internet_gateway" "igw_Earth" {
   tags = {
     Name     = "IGW_Earth"
     Provider = "terraform"
-    Role     = "test"
   }
 }
 
@@ -23,7 +21,6 @@ resource "aws_subnet" "subNet_Earth_a" {
   tags = {
     Name     = "subNet_Earth_a"
     Provider = "terraform"
-    Role     = "test"
   }
 }
 
@@ -34,7 +31,6 @@ resource "aws_subnet" "subNet_Earth_b" {
   tags = {
     Name     = "subNet_Earth_b"
     Provider = "terraform"
-    Role     = "test"
   }
 }
 
@@ -45,7 +41,6 @@ resource "aws_subnet" "subNet_Earth_c" {
   tags = {
     Name     = "subNet_Earth_c"
     Provider = "terraform"
-    Role     = "test"
   }
 }
 
@@ -54,7 +49,6 @@ resource "aws_route_table" "PubRT_Earth" {
   tags = {
     Name     = "PubRT_Earth"
     Provider = "terraform"
-    Role     = "test"
   }
 
   route {
