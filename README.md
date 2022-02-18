@@ -12,7 +12,8 @@
 
 ## Pré-Requisito
 - Ter uma conta na AWS;
-- Chave publica;
+- Configurar terraform no PC;
+- Ter/Criar uma Chave publica;
 
 ## Arquivos e Pastas
 
@@ -38,39 +39,39 @@
     ```
     
 2.  **Criação do Bucket S3, executando o **'1-remote-state/main.tf'****
-    2.1 *Inicializando o ambiente*
+    - 2.1 *Inicializando o ambiente*
     ```sh
     terraform init
     ```
-    2.2  Montando o plano de criação do Bucket S3
+    - 2.2  Montando o plano de criação do Bucket S3
     ```sh
     terraform plan
     ```
-    2.3 Aplicando a criação do Bucket S3 com auto-aprove
+    - 2.3 Aplicando a criação do Bucket S3 com auto-aprove
     ```sh
     terraform apply -auto-approve
     ```
     
 3.  **Alteração, a gosto, dos conteúdos das váriaveis de inicialização no **'Infra/variables.tf'****
 
-4. Alterar no repositório '2-Infra/keyPair.tf', a chave pública para a sua própria.
+4. **Alterar no repositório '2-Infra/keyPair.tf', a chave pública para a sua própria.**
 
 
 5.  **Executando a criação dos recursos**
-    5.1 Inicializando o ambiente
+    - 5.1 Inicializando o ambiente
 
     ```sh
     terraform init
     ```
-    5.2  Montando o plano de criação dos recursos
+    - 5.2  Montando o plano de criação dos recursos
     ```sh
     terraform plan
     ```
-    5.3 Aplicando a criação dos recursos com auto-aprove
+    - 5.3 Aplicando a criação dos recursos com auto-aprove
     ```sh
     terraform apply -auto-approve
     ```
-6. Por fim, não esquecer de destruir o ambiente, primeiro na pasta '2-Infra/' e depois na pasta '1-remote-state/'
+6. **Por fim, não esquecer de destruir o ambiente, primeiro na pasta '2-Infra/' e depois na pasta '1-remote-state/'**
     ```sh
     terraform destroy
     ```
