@@ -57,7 +57,7 @@
 4. **Alterar no repositório '2-Infra/keyPair.tf', a chave pública para a sua própria.**
 
 
-5.  **Executando a criação dos recursos**
+5.  **Executando a criação dos recursos na pasta '2-Infra/'**
     - 5.1 Inicializando o ambiente
 
     ```sh
