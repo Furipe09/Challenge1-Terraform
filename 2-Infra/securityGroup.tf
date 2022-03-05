@@ -2,10 +2,10 @@ data "http" "myip" {
   url = "http://ipv4.icanhazip.com"
 }
 
-resource "aws_security_group" "sg_Earth" {
-  name        = "sg_Earth"
+resource "aws_security_group" "sg_One" {
+  #name        = "sg_One"
   description = "Libera portas inbound 22/80"
-  vpc_id      = aws_vpc.vpc_Earth.id
+  vpc_id      = aws_vpc.vpc_One.id
 
   ingress {
     from_port   = 22
@@ -28,8 +28,9 @@ resource "aws_security_group" "sg_Earth" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  tags = {
-    Name        = "sg_Earth"
-    Provisioner = "terraform"
-  }
+  tags = merge(var.aws_instance_tags,
+    {
+      Name = "SG-${var.name_Project}"
+    },
+  )
 }

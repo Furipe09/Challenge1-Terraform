@@ -1,5 +1,5 @@
 terraform {
-  required_version = "1.1.5"
+  required_version = "1.1.7"
 
   required_providers {
     aws = {
@@ -17,7 +17,9 @@ terraform {
   }
 
   backend "s3" {
-    bucket  = "tfstate-831989750918-terraform"
+
+    bucket = "tfstate-2-831989750918-terraform"
+    #bucket  = var.bucket_tfstate
     key     = "dev/remote-state/terraform.tfstate"
     region  = "us-east-1"
     profile = "tf009"

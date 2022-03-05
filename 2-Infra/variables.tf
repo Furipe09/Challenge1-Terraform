@@ -9,7 +9,6 @@ variable "aws_profile" {
   type        = string
 }
 
-
 variable "aws_amis_ec2" {
   description = ""
   type        = string
@@ -48,4 +47,16 @@ variable "aws_nginx_ec2" {
   description = ""
   type        = string
   default     = "./nginx.sh"
+}
+
+variable "name_Project" {
+  description = ""
+  type        = string
+  default     = "Aquarius"
+}
+
+variable "bucket_tfstate" {
+  description = ""
+  type        = string
+  default     = "tfstate-2-831989750918-terraform"
 }
