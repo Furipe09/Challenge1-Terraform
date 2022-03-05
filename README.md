@@ -1,31 +1,14 @@
-# Desafio _2_
+# Desafio _NGINX_
 ![N|Solid](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmLvp8OCvFKUsdlXs-YIpnTcNYKCHgjTALzA&usqp=CAU)
 
 ## _Features_
 1.  Criar uma VPC;
-2.  Criar 3 subnets publicas, uma em cada AZ, dentro da VPC acima;
-3.  Criar 3 subnets privadas, uma em cada AZ, dentro da VPC acima;
-4.  Criar 1 Internet Gateway;
-5.  Criar 1 Nat Gateway;
-6.  Criar 2 Security Groups;
-7.  Instancias EC2 utilizando a AMI da amazon Linux, instalar o apache e liberar o acesso conforme abaixo:
-    7.1 Alterar o arquivo /var/www/html/index.html adicionando o texto  "Servidor Apache 1", e subir o serviço na porta 3001
-    7.1 Alterar o arquivo /var/www/html/index.html adicionando o texto  "Servidor Apache 2", e subir o serviço na porta 3002
-    7.1 Alterar o arquivo /var/www/html/index.html adicionando o texto  "Servidor Apache 3, e subir o serviço na porta 3003
-Obs: As 3 instâncias devem ser deployadas uma em cada subrede privada com acesso a internet somente para instalação de pacotes , o apache não deve mostrar sua versão aos clientes através do nmap ou inspect via browser, desabilitar a versão 1.0 http e configurar no S.O. o tcp reuse e tcp port recycle (Que serve para reutilizar as portas TCP do kernel)
-8. Uma Instância com Nginx em uma subrede pública, que será utilizada como LoadBalancer, conforme abaixo:
-    8.1 Esta instãncia deve ter acesso Full a internet e acesso as portas de serviço das EC2 com apache via Security Group.
-    8.2 Configurar o LoadBalancer no modo Random e acessivel via porta 8080.
-    8.3 Durante a apresentação, o acesso deve ser feito no ip público desta EC2 para validar o funcionamento do Balancer
-9.  Criar um Bucket S3 sem acesso a internet para ser repositório do terraform.tfstate
-
-## Obrigatório ##
-   - As EC2 devem ser deployadas utilizando "count" através do módulo criado no último desafio
-   - As subnets devem ser criadas utilizando "count" ou "for_each"
-   - Necessário ter outputs dos ips privados das 3 EC2 com apache e do ip público da EC2 com nginx
-   - Utilizar dynamic block de um item de sua escolha da infraestrutura
-   - Rodar tudo no computador pessoal, subir no GIT pessoal e montar uma apresentação final do seu código em funcionamento
-   -- Ex: Mostrar o GIT, e rodar o terraform apply e mostrar a infra sendo provisionada na AWS e acessar o ip do balancer, demostrando o funcionamento.
+2.  Criar 3 subnets, uma em cada AZ, dentro da VPC acima;
+3.  Criar 1 Internet Gateway;
+4.  Criar 1 Security Group com acesso as portas 80 e 22;
+5.  Criar EC2 com Nginx ativo e acessivel pela porta 80;
+6.  Criar um Bucket S3 sem acesso a internet para ser repositório do terraform.tfstate
+7.  **_Extra_** - Modularizar a criação do EC2
 
 ## Pré-Requisito
 - Ter uma conta na AWS;
